@@ -1,13 +1,15 @@
 var character = document.getElementById("character");
 var block = document.getElementById("block");
 var counter=0;
-var jumpKeys = jump
+var jumpKeys = jump;
+
 //add more keys to jump, spacebar.
 //prevent game from lauching until keydown
 //add highscore
 //add table for scores
-//request username
-//unlockables and customs?
+//alert username input highscore table
+
+
 function jump(){
     if(character.classList == "animate"){return}
     character.classList.add("animate");
@@ -22,10 +24,9 @@ var checkDead = setInterval(function() {
         block.style.animation = "none";
         alert("Game Over, Try again. Score: "+Math.floor(counter/100));
         counter=0;
-        block.style.animation = "block 1s infinite linear";
+        block.style.animation = "block 1s infinite linear";         
     }else{
         counter++;
         document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
     }
-    
-}, 5);
+}, 10);
